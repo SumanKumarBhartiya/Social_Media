@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            border: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 0px;
+            margin-top: 12px;
+            border: 1px;
+            height: 400px;
+            width: 420px;
+            background: #fff;
+            display: block;
+            border: 1px solid #dddfe2;
+            border-radius: 16px;
+        }
+
+        body {
+            background: #f0f2f5;
+        }
+
+        h1 {
+            color: #166fe5;
+            padding-top: 25px;
+            font-weight: 2;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+        }
+
+        label {
+            color: #166fe5;
+            font-weight: 700;
+            font-size: 45px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        input[value="Login"] {
+            appearance: auto;
+            user-select: none;
+            white-space: pre;
+            align-items: flex-start;
+            text-align: center;
+            cursor: pointer;
+            box-sizing: content-box;
+            background-color: #166fe5;
+            color: white;
+            padding: 1px 6px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #03a0fa;
+            border-image: initial;
+            width: 160px;
+            height: 30px;
+            border-radius: 12px;
+        }
+
+        input,
+        button {
+            height: 35px;
+            width: 330px;
+            border-radius: 8px;
+            border: 1px solid #dddfe2;
+            background-color: #fff;
+            font-size: 18px;
+        }
+
+        form[name="vb"] {
+            margin-top: 50px;
+        }
+
+        button {
+            background-color: #00ff40;
+            color: white;
+            cursor: pointer;
+        }
+
+        div[name="12"] {
+            background-color: #f0f2f5;
+            width: auto;
+            margin-top: 120px;
+            border: 0px;
+        }
+    </style>
+    <title>Log in to Bhartiya</title>
+</head>
+
+<body>
+    {% if user.is_authenticated %}
+    <script> document.location = '/home'</script>
+    {% else %}
+
+    <center>
+        {% for message in messages %}
+        <h1 role="alert">
+            <strong>Message : </strong> {{ message }}
+        </h1>
+        {% endfor %}
+        <form name="vb">
+            <label>Bhartiya</label>
+        </form>
+        <div>
+            <h1>Log in to Bhartiya</h1>
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="email" placeholder=" Enter your email" name="uname" required="True"><br><br>
+                <input type="password" placeholder=" Password" name="pwd" required="True"><br><br>
+                <input type="submit" value="Login" name="t3"><br><br><br>
+            </form>
+            <h5 style="color:#3386f2;font-size: 15px;">Don't have an account?</h5>
+            <a href="/signup"> <button>SignUp</button></a>
+        </div>
+    </center>
+    <div name="12">
+
+    </div>
+    {% endif %}
+
+</body>
+
+</html>
