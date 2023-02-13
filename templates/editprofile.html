@@ -1,0 +1,16 @@
+{% extends 'basic.html' %}
+{% block title %} {{user.first_name}} {% endblock %}
+
+{% block body %}
+<form class="mx-4 my-4" action="/edit" method="post">
+    {% csrf_token %}
+    {{form.profile_photo}}<br><br>
+    {{form.cover_photo}}<br><br>
+    {{form.intro}}<br><br>
+    {{form.education}}<br><br>
+    {{form.hometown}}<br><br>
+    {{form.work}}<br><br>
+    <input type="submit" value="Update">
+
+</form>
+{% endblock %}

@@ -9,10 +9,15 @@
             <img src="{% static 'images/suman.jpg' %}" class="card-img-top "
                 style="border-radius: 50%;height:250px;width:250px;" alt="...">
         </span> -->
-        <img src="{% static 'images/suman.jpg' %}" class="rounded mx-auto d-block my-4"
-            style="border-radius: 50%;height:250px;width:250px;" alt="...">
+        <img src="{% static 'images/suman.jpg' %}" class="mx-auto my-4"
+            style="border-radius: 50%;height:300px;width:280px;" alt="...">
         <div class="card-body d-flex justify-content-center">
             <h3 class="card-title d-flex justify-content-center">{{user.first_name}}</h3>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Bio : </h5>
+            <h5 class="card-title">Education : </h5>
+            <a href="/edit">Edit Profile</a>
         </div>
     </div>
 </div>

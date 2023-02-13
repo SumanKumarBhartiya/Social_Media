@@ -93,13 +93,13 @@
 
 <body bgcolor="#f0f2f5">
     {% if user.is_authenticated %}
-    <script> document.location = '/home'</script>
+    <script> document.location = '/homepage'</script>
     {% else %}
     <center>
         {% for message in messages %}
-        <h1 role="alert">
+        <h2 style="color: red;" role="alert">
             <strong>Message : </strong> {{ message }}
-        </h1>
+        </h2>
         {% endfor %}
         <form name="vb">
             <label>Bhartiya</label>
